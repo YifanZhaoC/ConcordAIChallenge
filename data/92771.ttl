@@ -1,0 +1,683 @@
+@prefix : <http://example.org/92771#> .
+@prefix db: <http://example.org/> .
+@prefix p: <http://example.org/properties#> .
+@prefix c: <http://example.org/clases#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr: <http://dbpedia.org/page/> .
+@prefix dbp: <http://dbpedia.org/property/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix moac: <http://observedchange.com/moac/ns#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <https://schema.org/> .
+
+db:92771	a	dbo:Buidling, dbr:Cathedral;
+		rdfs:label	"Basilique-cathedrale de notre dame de Quebec"@fr , 
+					"Basilique-cathedrale de notre dame de Quebec"@en ;
+		rdfs:comment ""@fr ,
+					 ""@en ;
+		p:isRegsiteredIn	:quebecArcheologicalPlace ;
+		p:hasStructure   :architechturalStructure ;
+		p:hasReligiousOrder   db:Catholicism ;
+		p:hasLocation   :Location  ;
+		p:isPartOf      :intitutionnalReligiousCore;
+		p:hasStatus	:Status ;
+		p:hasHistoricalInfos :historicalInfos ;
+		foaf:isPrimaryTopicOf     <http://www.patrimoine-culturel.gouv.qc.ca/rpcq/detail.do?methode=consulter&id=92771&type=bien#.W6T8u-hKhyx> ;
+		foaf:based_near   db:103126, db:92787, db:102588, db:104011 ;
+		p:hasAssociatedRealEstate db:93523 ;
+		p:hasAssociatedMovableEstate db:163130, db:163131, db:163132, db:111431 ;
+		p:hasCommemorativePlates db:99402, db:99162 ;
+		p:hasAssociatedEvents db:7394, db:25650, db:26097 ;
+		p:hasAssociatedGroups db:7340, db:17474, db:17475 ;
+		p:hasAssociatedPersons  db:7227, db:7228, db:7230, db:7233, db:7256, db:7363, db:7382, db:7686, db:7931, db:8003, 
+								db:8104, db:8122, db:8235, db:8551, db:9011, db:12000, db:10159, db:10289, db:16165, db:24567,
+								db:26765, db:27284 .
+								
+#################################################################
+#    First Degree
+#################################################################
+
+:quebecArcheologicalPlace   a     c:archeologicalPlace ;
+		rdfs:label "le patrimoine archéologique de Quebec"@fr , 
+				   "the Quebec archeological patrimonial"@en .
+
+:architechturalStructure 	a			dbo:ArchitecturalStructure ;
+		rdfs:comment "structure architecturale"@fr,
+					 "architectural structure"@en;
+		p:hasConstruction 
+			[
+				a c:Construction;
+				p:started	"1647"^^xsd:gYear ;
+				p:finished	"1650"^^xsd:gYear ;
+			];
+		p:hasReconstruction 
+			[
+				a c:Construction ;
+				p:started  "1923"^^xsd:gYear ;
+				p:finished "1930"^^xsd:gYear ;
+				p:constructedBy    db:7233  , db:7363 , db:8551 , db:7256 , 
+						db:8003  , db:7382 ,  db:7931 ;
+			];
+		p:hasComponent    :Sacristy, :Chapel, :Westwork, :Nave, :Parvise, :bellTower, :Crypt ;
+		dbo:floorCount	   "2"^^xsd:integer ; 
+		p:hasFacade    :Facade ;
+		dbo:constructionMaterial  "pierre"@fr, 
+		                          "stone"@en.
+					  
+:Location  a dbo:Place ;
+		rdfs:comment   "emplacement"@fr, 
+					   "location"@en ;
+		p:inMRC  dbr:Quebec ;
+		p:hasMunicipality   dbr:Quebec ;
+		p:inCountry    dbr:Canada ;
+		dbr:address     "rue Buade"@fr, "Buade street"@fr ;
+		p:inNeighbourhood  "vieux Québec"@fr, "old Quebec"@en ; 
+		geo:lat     "46.81373889"^^xsd:float ;
+		geo:long 	"-71.20583333"^^xsd:float ;
+		p:dC       "1213132"^^xsd:integer .
+	  
+:intitutionnalReligiousCore   a    dbo:territory ;  
+		rdfs:label   "noyau religieux et institutionnel du site patrimonial du Vieux-Québec"@fr ,
+					 "religious and institutional core of the Old Quebec Heritage Site"@en;
+		p:inMRC  dbo:Quebec ;
+		p:hasSurface	"135"^^xsd:integer ;
+		p:inCountry    dbr:Canada ;
+		p:hasMunicipality   dbr:Quebec .    		
+
+:Status			a 		     owl:Thing  ;
+		rdfs:comment "Décrit le status du bâtiment"@fr ,
+					 "Describe the status of the building"@en;
+		p:hasClassement		:classementEvent ;
+		p:hasDesignation	:designationEvent ;
+		p:hasDeclaration 	:declarationEvent ;
+		p:hasBecame 		:firstCatherdraleEvent .
+
+:historicalInfos a owl:Thing;
+		rdfs:comment "Décrit les informations historiques du bâtiment"@fr ;
+		:hasEvent 	:event1, :event2, :event3, :event4, :event5, :event6, :event7, :event8, :event9, :event10, 
+					:event11, :event12, :event13, :event14, :event15, :event16, :event17, :event18, :event19, :event20, 
+					:event21, :event22, :event23, :event24, :event25, :event26, :event27, :event28, :event29, :event30,
+					:event31, :event32, :event33. 
+					
+#################################################################
+#    Second Degree
+#################################################################
+
+:Sacristy 			a 			dbo:ReligiousBuilding ;
+		rdfs:label "une sacristie"@fr,
+				   "a sacristy"@en .
+		
+:Chapel			a 			dbo:ReligiousBuilding ;
+		rdfs:label "une chapelle"@fr,
+				   "a chapel"@en .
+
+:Westwork 			a 			dbo:Building ;
+		rdfs:label  "un massif antérieur"@fr,
+					"a westwork"@en ;
+		dbo:floorCount 	"2"^^xsd:integer .	
+		
+:Nave 				a 			dbo:ReligiousBuilding ;
+		rdfs:label  "une nef"@fr,
+					"a nave"@en;
+		p:hasForm		"rectangulaire"@fr,
+						"rectangular"@en.  			
+
+:Parvise 		a 			dbo:Building ;
+		rdfs:label  "un parvis"@fr, 
+					"a parvise"@en;
+		p:delimitedBy	:Wall.
+
+:bellTower    a		dbo:Building ;
+		rdfs:label  "une tour clochet"@fr,
+					"a bell tower"@en;
+		p:hasConstruction 
+			[
+				a c:Construction;
+				p:started	"1768"^^xsd:gYear ;
+				p:started	"1771"^^xsd:gYear ;
+			];
+		dbo:architect :8551 ;
+		p:victimOf  	    :incident .
+
+:Crypt 		a 		dbo:Building ;
+		rdfs:label   "de cryptes"@fr, 
+					 "crypts"@en;
+		dbo:architect db:12000 ;
+		p:hasConstruction 
+			[
+				a c:Construction;
+				p:started	"1959"^^xsd:gYear ;
+			].
+  				
+:Facade               a      dbo:ArchitecturalStructure ; 
+		rdfs:label 	"Façade monumentale"@fr ,
+						"Monumental facade"@en;
+		dbo:architect db:7230 ;
+		p:hasConstruction 
+			[
+				a c:Construction;
+				p:started	"1843"^^xsd:gYear ;
+			];
+		dbo:architecturalStyle dbr:Neoclassical_architecture .
+			
+:classementEvent 			a			event:Event ; 
+		foaf:label "Immeuble patrimonial"@fr ,
+				   "patrimonial building"@en;
+		event:agent 	db:mcc ; 
+		event:time 		"1966"^^xsd:gYear .  
+					
+:designationEvent			a			event:Event ; 
+		foaf:label  "Lieu historique national du Canada"@fr,
+					"Historical place of Canada"@en;
+		rdfs:comment  "le jour ou la cathedrale a été declarée comme Lieu historique national du Canada"@fr ;
+		event:agent 	:clmhc ; 
+		event:time      "1989"^^xsd:gYear . 
+				
+:declarationEvent		a			event:Event ; 
+		foaf:label  "Situé dans un site patrimonial"@fr ,
+					"Situated in a patrimonial site"@en ;
+		event:agent 	:GouvQuébec ; 
+		event:time      "1989"^^xsd:gYear . 	
+	
+:firstCatherdraleEvent           a			event:Event ; 
+		foaf:label 		"première cathédrale de l'immense diocèse de Québec"@fr,
+						"first cathedral of the immense diocese of Quebec"@en;
+		event:agent 	db:7686 ; 
+		event:time     	"1674"^^xsd:gYear . 		
+						 
+:edifice   a    dbo:Building ; 
+		dbo:dateUnveiled  "1640"^^xsd:gYear.
+
+:event1 a event:Event;
+		rdfs:label  "l'octroiement des fonds pour agrandissement"@fr ,
+					"the allocation of funds for expansion"@en;
+		event:agent 	dbr:Louis_XIV_of_France ;
+		event:time 		"1697"^^xsd:gYear.
+		
+:event2 a event:Event;
+		rdfs:comment  "le début de la construction de la façade"@fr ,
+					  "the beginning of the construction of the facade"@en;
+		event:agent 	db:7233 ;
+		event:time 		"1684"^^xsd:gYear.
+
+:event3 a event:Event;
+		rdfs:comment  "la fin de la construction de la façade"@fr ,
+					  "the end of the construction of the facade"@en;
+		event:agent 	db:7233 ;
+		event:time 		"1687"^^xsd:gYear.
+
+:event4 a event:Event;
+		rdfs:comment  "le rattachement du massif antérieur à l'église par le prolongement de la nef"@fr ,
+					  "the attachment of the westwork to the church by extending the nave"@en;
+		event:agent 	db:7233 ;
+		event:time 		"1697"^^xsd:gYear.
+		
+:event5 a event:Event;
+		rdfs:comment  "le début de l'agrandissement de la cathédrale, Un choeur plus profond est construit et jouxté d'une sacristie au sud, des bas-côtés sont aménagés en prolongeant les extrémités du transept, des piliers sont formés avec les murs latéraux et surmontés d'une arcature et de fenêtres hautes, et une nouvelle façade, plus large et plus haute, remplace celle de Baillif."@fr  ,
+					  "the beginning of the extension of the cathedral, a deeper choir was built and adjoined by a sacristy to the south, aisles were built extending the ends of the transept, pillars were formed with lateral walls and surmounted by an arch and high windows, and a new, wider and higher façade replaced that of the Bailiff."@en;
+		event:agent 	db:7363 ;
+		event:time 		"1744"^^xsd:gYear.
+		
+:event6 a event:Event;
+		rdfs:comment  "la fin de l'agrandissement de la cathédrale, Un choeur plus profond est construit et jouxté d'une sacristie au sud, des bas-côtés sont aménagés en prolongeant les extrémités du transept, des piliers sont formés avec les murs latéraux et surmontés d'une arcature et de fenêtres hautes, et une nouvelle façade, plus large et plus haute, remplace celle de Baillif."@fr  ,
+					  "the completion of the cathedral's extension, a deeper choir was built and adjoined by a sacristy to the south, aisles were built extending the ends of the transept, pillars were formed with lateral walls and surmounted by a high arch and windows, and a new, wider and higher façade replaced that of the Bailiff."@en;
+		event:agent 	db:7363 ;
+		event:time 		"1748"^^xsd:gYear.
+
+:event7 a event:Event;
+		rdfs:comment  "l'ncendie lors du siège de Québec"@fr  ,
+					  "the fire during the siege of Quebec City"@en;
+		event:time 		"1759"^^xsd:gYear.
+
+:event8 a event:Event;
+		rdfs:comment  "le début du rétablissement de la cathédrale selon les plans de Chaussegros de Léry plus un rajout d'un second lanternon au clocher et élargit les piliers de la nef"@fr  ,
+					  "the beginning of the restoration of the cathedral according to the plans of Chaussegros de Léry plus the addition of a second lantern to the bell tower and widens the pillars of the nave"@en;
+		event:agent 	db:8551 ;
+		event:time 		"1768"^^xsd:gYear.
+		
+:event9 a event:Event;
+		rdfs:comment  "la fin du rétablissement de la cathédrale selon les plans de Chaussegros de Léry plus un rajout d'un second lanternon au clocher et élargit les piliers de la nef"@fr  ,
+					  "the end of the restoration of the cathedral according to the plans of Chaussegros de Léry plus the addition of a second lantern to the bell tower and widens the pillars of the nave"@en;
+		event:agent 	db:8551 ;
+		event:time 		"1771"^^xsd:gYear.
+
+:event10 a event:Event;
+		rdfs:comment  "le début de la réalisation des retables, du baldaquin, des statues et du trône de l'évêque."@fr  ,
+					  "the beginning of the realization of the altarpieces, the canopy, the statues and the bishop's throne."@en;
+		event:agent 	db:8551, db:7228 ;
+		event:time 		"1787"^^xsd:gYear.
+		
+:event11 a event:Event;
+		rdfs:comment  "la fin de la réalisation des retables, du baldaquin, des statues et du trône de l'évêque."@fr  ,
+					  "the completion of the altarpieces, canopy, statues and the bishop's throne."@en;
+		event:agent 	db:8551, db:7228 ;
+		event:time 		"1793"^^xsd:gYear.
+
+:event12 a event:Event;
+		rdfs:comment  "la livraison du maître autel"@fr  ,
+					  "the delivery of the high altar master"@en;
+		event:agent 	db:7228 ;
+		event:time 		"1797"^^xsd:gYear.
+
+:event13 a event:Event;
+		rdfs:comment  "la livraison du banc d'oeuvre"@fr  ,
+					  "the delivery of the work bench"@en;
+		event:agent 	db:7228 ;
+		event:time 		"1799"^^xsd:gYear.
+
+:event14 a event:Event;
+		rdfs:comment  "l'ornement de la façade d'un fronton et de retours de corniche"@fr  ,
+					  "the ornament of the facade of a pediment and cornice returns"@en;
+		event:agent 	db:7228 ;
+		event:time 		"1818"^^xsd:gYear.
+
+:event15 a event:Event;
+		rdfs:comment  "le début de l'execution des fausses voûtes en plâtre"@fr  ,
+					  "the beginning of the execution of the false plaster vaults"@en;
+		event:agent 	db:10159 ;
+		event:time 		"1819"^^xsd:gYear.
+		
+:event16 a event:Event;
+		rdfs:comment  "la fin de l'execution des fausses voûtes en plâtre"@fr  ,
+					  "the end of the execution of the false plaster vaults"@en;
+		event:agent 	db:10159 ;
+		event:time 		"1822"^^xsd:gYear.
+
+:event17 a event:Event;
+		rdfs:comment  "la complétion du décor de la nef"@fr  ,
+					  "the completion of the decoration of the nave"@en;
+		event:agent 	db:7228 ;
+		event:time 		"1823"^^xsd:gYear.
+
+:event18 a event:Event;
+		rdfs:comment  "le retravaillage des retables latéraux"@fr  ,
+					  "the reworking of the side altarpieces"@en;
+		event:agent 	db:7230 ;
+		event:time 		"1825"^^xsd:gYear.
+
+:event19 a event:Event;
+		rdfs:comment  "l'érigement de la sacristie contre le mur nord du choeur"@fr  ,
+					  "the erection of the sacristy against the northern wall of the choir"@en;
+		event:time 		"1828"^^xsd:gYear.
+
+:event20 a event:Event;
+		rdfs:comment  "la proposition du projet de façade actuelle"@fr  ,
+					  "the proposal for the current facade project"@en;
+		event:agent 	db:7230 ;
+		event:time 		"1829"^^xsd:gYear.
+
+:event21 a event:Event;
+		rdfs:comment  "le début de la construction de la façade actuelle"@fr  ,
+					  "the beginning of the construction of the current facade"@en;
+		event:agent 	db:7230 ;
+		event:time 		"1843"^^xsd:gYear.
+		
+:event22 a event:Event;
+		rdfs:comment  "l'interruption des travaux de construction de la façade actuelle"@fr  ,
+					  "the interruption of construction work on the current facade"@en;
+		event:agent 	db:7230 ;
+		event:time 		"1844"^^xsd:gYear.
+
+:event23 a event:Event;
+		rdfs:comment  "la conception de la clotûre en fonte qui délimite le parvis"@fr  ,
+					  "the design of the cast iron fence that defines the square"@en;
+		event:agent 	db:7227 ;
+		event:time 		"1857"^^xsd:gYear.
+
+:event24 a event:Event;
+		rdfs:comment  "l'élévation de la cathédrale au rang de basilique"@fr  ,
+					  "the elevation of the cathedral to the rank of a basilica"@en;
+		event:time 		"1874"^^xsd:gYear.
+
+:event25 a event:Event;
+		rdfs:comment  "l'annexation de la chapelle du Sacré-Coeur au bas-côté nord"@fr  ,
+					  "the annexation of the Sacré-Coeur chapel on the north aisle"@en;
+		event:time 		"1887"^^xsd:gYear.
+
+:event26 a event:Event;
+		rdfs:comment  "le revêtement du côté sud de l'édifice avec des pierres de taille"@fr  ,
+					  "the south side of the building's south side cladding with cut stones"@en;
+		event:agent 	db:8003 ;
+		event:time 		"1890"^^xsd:gYear.
+
+:event27 a event:Event;
+		rdfs:comment  "le début de la couverture du chemin et construction de la chapelle Saint-Louis"@fr  ,
+					  "the beginning of the coverage of the road and construction of the Saint-Louis chapel"@en;
+		event:agent 	db:8003 ;
+		event:time 		"1914"^^xsd:gYear.
+		
+:event28 a event:Event;
+		rdfs:comment  "la fin de la couverture du chemin et construction de la chapelle Saint-Louis"@fr  ,
+					  "the end of the coverage of the road and construction of the Saint-Louis chapel"@en;
+		event:agent 	db:8003 ;
+		event:time 		"1916"^^xsd:gYear.
+
+:event29 a event:Event;
+		rdfs:comment  "la destruction de la basilique par les flammes"@fr  ,
+					  "the destruction of the basilica by fire"@en;
+		event:time 		"1922"^^xsd:gYear.
+
+:event30 a event:Event;
+		rdfs:comment  "le début du rétablissement de l'édifice et de son décor à partir de photographies et de plans"@fr  ,
+					  "the beginning of the restoration of the building and its decoration based on photographs and plans"@en;
+		event:agent 	db:7382, db:7931 ;
+		event:time 		"1923"^^xsd:gYear.	
+
+:event31 a event:Event;
+		rdfs:comment  "la fin du rétablissement de l'édifice et de son décor à partir de photographies et de plans "@fr  ,
+					  "the end of the restoration of the building and its decoration based on photographs and plans"@en;
+		event:agent 	db:7382, db:7931 ;
+		event:time 		"1930"^^xsd:gYear.		
+
+:event32 a event:Event;
+		rdfs:comment  "la réalisation des cryptes où sont réunis les sépultures de la plupart des évêques de Québec et de quatre gouverneurs de la Nouvelle-France"@fr  ,
+					  "the realization of the crypts where the graves of most of the Bishops of Quebec and four governors of New France are gathered"@en;
+		event:agent 	db:12000;
+		event:time 		"1959"^^xsd:gYear.	
+		
+:event33 a event:Event;
+		rdfs:comment  "le début de la réalisation de la chapelle funéraire de François de Laval"@fr  ,
+					  "the beginning of the construction of the funeral chapel for François de Laval"@en;
+		event:agent 	db:10289;
+		event:time 		"1992"^^xsd:gYear.	
+
+:event34 a event:Event;
+		rdfs:comment  "la fin de la réalisation de la chapelle funéraire de François de Laval"@fr  ,
+					  "the completion of the funeral chapel for François de Laval"@en;
+		event:agent 	db:10289;
+		event:time 		"1995"^^xsd:gYear.			
+
+#################################################################
+#    Third Degree
+#################################################################
+		
+:mcc        a			dbo:GovernmentAgency ;
+		rdfs:label	"le Ministre de la Culture et des Communications"@fr  ,
+					"the culture and communication minister"@en;
+		rdfs:hasPage	<http://www.mcc.gouv.qc.ca/> ;
+		rdfs:comment 	"Le ministère de la Culture et des Communications est un ministère du gouvernement québécois"@fr.
+		
+:clmhc 		a			schema:Organization ;
+		rdfs:label	"La Commission des lieux et monuments historiques du Canada"@fr  ,
+					 "the Historic Sites and Monuments Board of Canada"@en; 
+		rdfs:hasPage    <https://www.pc.gc.ca/fr/culture/clmhc-hsmbc> ; 
+		rdfs:comment "(CLMHC) est un organisme canadien qui reçoit les demandes du public concernant des lieux ou monuments historiques que l'on aimerait protéger et qui conseille le ministre de l'Environnement du gouvernement du Canada à leur propos"@fr.
+							
+:GouvQuébec    a			schema:Organization ;
+		rdfs:label 	"le Gouvernement du Québec"@fr  ,
+					"the Quebec government"@en;
+		rdfs:hasPage     <www.gouv.qc.ca/FR/Pages/accueil.aspx> ;
+		rdfs:comment   "Le gouvernement du Québec est l'organisme du pouvoir exécutif dans la province de Québec depuis 1867"@fr.
+
+:incident   a moac:Incident ;
+		rdfs:label "un incendie"@fr ,
+				   "a fire"@en;
+		rdfs:comment  "La tour-clocher, et le decor ont été restaurée après l'incendie de 1922."@fr ;
+		moac:Emergency 	moac:Fire ; 
+		moac:date     	"1922"^^xsd:gYear .
+
+:Wall		a 			dbo:Building ;
+		rdfs:label "un mur"@fr ,
+				   "a wall"@en;
+		p:surmontedBy	:Fence ;
+		dbo:constructionMaterial	"pierre"@fr.	
+				
+#################################################################
+#    Fourth Degree
+#################################################################
+
+:Fence		a 			dbo:Building ;
+		rdfs:label "une clôture"@fr ,
+				   "a "@en;
+		dbo:constructionMaterial    "fonte"@fr,
+									"cast iron"@en;
+		dbo:architect db:7227 .
+		
+#################################################################
+#    Object Properties
+#################################################################
+
+p:isRegsiteredIn 	a		owl:ObjectProperty ;
+		rdfs:domain  dbo:Building ;
+		rdfs:range 	 dbr:territory ;
+		rdfs:label    "est enregistré dans"@fr ,
+					  "is registered in"@en .
+
+p:hasStructure  a  owl:ObjectProperty ;
+		rdfs:domain  dbo:Building ;
+		rdfs:range 	 dbo:ArchitecturalStructure ;
+		rdfs:label    "a une structure composée de"@fr ,
+					  "has structure including"@en .
+
+p:hasReligiousOrder a owl:ObjectProperty;
+		rdfs:domain dbo:Building;
+		rdfs:range  c:Religion;
+		rdfs:label    "fait partie de l'ordre religieux appelé"@fr ,
+					  "is part of the religious order called"@en .
+  
+p:hasLocation	a	owl:ObjectProperty ;
+		rdfs:domain  dbo:Building ;
+		rdfs:range 	dbo:Place ;
+		rdfs:label    "se trouve"@fr ,
+					  "is located"@en . 
+					  
+p:isPartOf		a  owl:ObjectProperty ;
+		rdfs:domain  dbo:Building ;
+		rdfs:range 	dbr:territory ;
+		rdfs:label    "fait partie de"@fr ,
+					  "is part of"@en .
+	
+p:hasStatus		a		owl:ObjectProperty ;
+		rdfs:domain  dbo:Building ;
+		rdfs:range 	:Status ;
+		rdfs:label  "a un status composé de"@fr ,
+					  "has a status including"@en .
+		
+p:hasHistoricalInfos a owl:ObjectProperty ;
+		rdfs:domain  dbo:Building ;
+		rdfs:range 	:historicalInfos ;
+		rdfs:label    "a une histoire composé de"@fr ,
+					  "has an history consisting of"@en .
+
+p:hasAssociatedRealEstate   	a		owl:ObjectProperty ;
+		rdfs:domain  dbo:Place ;
+		rdfs:range 	dbo:Place ;
+		rdfs:label    "est associé au patrimoine immobilié composé de"@fr ,
+					  "is associated to the real estate consisting of"@en .
+
+p:hasAssociatedMovableEstate	   a		owl:ObjectProperty ;
+		rdfs:domain  dbo:Place ;
+		rdfs:range 	dbr:Furniture ;
+		rdfs:label    "est associé au patrimoine mobilié incluant"@fr ,
+					  "is associated with the movable estate including"@en .
+	
+p:hasCommemorativePlates 			a		owl:ObjectProperty ;
+		rdfs:domain  dbo:Place ;
+		rdfs:range 	dbr:Furniture ;
+		rdfs:label    "a les plaques commémoratives"@fr ,
+					  "has commemorative plates"@en .
+								
+p:hasAssociatedEvents 		a		owl:ObjectProperty ;
+		rdfs:domain  event:Event ;
+		rdfs:range 	 event:Event ;
+		rdfs:label    "est associé aux évènements"@fr ,
+					  "is associated to events"@en .
+								
+p:hasAssociatedGroups 			a		owl:ObjectProperty ;
+		rdfs:domain  dbo:Place ;
+		rdfs:range 	 schema:Organization ;
+		rdfs:label    "est associé aux groupes"@fr ,
+					  "is associated to groups"@en .
+                                
+p:hasAssociatedPersons			a		owl:ObjectProperty ;
+		rdfs:domain  dbo:Place ;
+		rdfs:range 	 foaf:Person ;
+		rdfs:label    "est associé aux personnes"@fr ,
+					  "is associated to persons"@en .
+
+p:hasConstruction a owl:ObjectProperty ;
+		rdfs:domain dbo:Building ;
+		rdfs:range 	   c:Construction ;
+		rdfs:label    "a une construction"@fr ,
+					  "has a construction"@en .
+					  
+p:hasReconstruction a owl:ObjectProperty ;
+		rdfs:domain dbo:Building ;
+		rdfs:range 	   c:Construction ;
+		rdfs:label    "a une reconstruction"@fr ,
+					  "has a reconstruction"@en .
+				  
+p:started a owl:ObjectProperty;
+		rdfs:domain c:Construction ;
+		rdfs:range 	xsd:gYear ;
+		rdfs:label "débutant en"@fr ,
+				   "starting in"@en .
+				   
+p:finished a owl:ObjectProperty;
+		rdfs:domain c:Construction ;
+		rdfs:range 	xsd:gYear ;
+		rdfs:label "finissant en"@fr ,
+				   "finishing in"@en .
+				   
+p:constructedBy a owl:ObjectProperty;
+		rdfs:domain c:Construction ;
+		rdfs:range 	foaf:Person;
+		rdfs:label "par"@fr ,
+				   "by"@en .
+	
+:hasComponent   a		owl:ObjectProperty ;
+		rdfs:domain  dbo:Cathedral ;
+		rdfs:range 	   dbo:Building ;
+		rdfs:label  "est composé de"@fr ,
+					"is composed of"@en .
+						  
+p:hasFacasde   a		owl:ObjectProperty ;
+		rdfs:domain  dbo:Cathedral ;
+		rdfs:range 	 dbo:Building ;
+		rdfs:label  "a une façade"@fr ,
+					  "has a Facade"@en .		   
+	  
+p:hasPlan 	 a		owl:ObjectProperty ;
+		rdfs:domain  dbo:Cathedral ;
+		rdfs:range 	 foaf:Document ;
+		rdfs:label  "a un plan"@fr ,
+					  "has a plan"@en .
+
+p:inMRC 		a			owl:ObjectProperty ;
+		rdfs:domain  dbo:Place ;
+		rdfs:range 	 dbo:Cathedral ;
+		rdfs:label    "fait partie de la municipalité régionale du comté de"@fr, 
+					  "is part of the regional municipality county of"@en . 
+
+p:hasMunicipality  a		owl:ObjectProperty ;
+		rdfs:domain  dbo:Place ;
+		rdfs:range 	dbo:Place ;
+		rdfs:label    "fait partie de le municipalité de"@fr ,
+					  "is part of the municipality of"@en .
+					 
+p:inCountry a owl:ObjectProperty;
+		rdfs:domain  :place ;
+		rdfs:range 	dbo:Cathedral ;
+		rdfs:label    "est dans le pays"@fr ,
+					  "is in the country"@en .
+				
+p:dC				a 		owl:ObjectProperty ;
+		rdfs:domain  dbo:Place ;
+		rdfs:range 	xsd:integer ;
+		rdfs:label  "fait partie du lot cadastral"@fr ,
+					""@en .
+						
+p:hasSurface	a	owl:ObjectProperty ;
+		rdfs:domain  dbo:territory ;
+		rdfs:range 	 xsd:integer ;
+		rdfs:label  "a une surface de "@fr ,
+					  "has a surface of"@en .
+
+p:hasClassement     a		owl:ObjectProperty ;
+		rdfs:domain  dbo:Cathedral ;
+		rdfs:range    event:Event ;
+		rdfs:label  "est classé"@fr ,
+					"is classified"@en .
+
+p:hasDesignation     a		owl:ObjectProperty ;
+		rdfs:domain  dbo:Cathedral ;
+		rdfs:range    event:Event ;
+		rdfs:label  "est designé comme"@fr ,
+					"is referred to as"@en .		
+		
+p:hasDeclaration     a		owl:ObjectProperty ;
+		rdfs:domain  dbo:Cathedral ;
+		rdfs:range    event:Event ;
+		rdfs:label  "est déclaré"@fr ,
+					"is declared"@en .				   
+
+p:hasBecame     a		owl:ObjectProperty ;
+		rdfs:domain  dbo:Cathedral ;
+		rdfs:range    event:Event ;
+		rdfs:label  "est devenu"@fr ,
+					  "has become"@en .				   
+
+p:surmountedBy   a		owl:ObjectProperty ;
+		rdfs:domain dbo:Building ;
+		rdfs:range 	 dbo:Building ;
+		rdfs:label  "surmonté de"@fr ,
+					  "surmounted by"@en .
+	
+p:hasEvent a owl:ObjectProperty ;
+		rdfs:domain  :historicalInfos ;
+		rdfs:range 	event:Event ;
+		rdfs:label  "des évènements"@fr ,
+					"by the events"@en .
+
+p:victimOf a owl:ObjectProperty ;
+		rdfs:domain    dbo:Building ;
+		rdfs:range 	   moac:Incident ;
+		rdfs:label  "a été victime de"@fr ,
+					  "was victim of"@en .
+
+p:delimitedBy   a 		owl:ObjectProperty ;
+		rdfs:domain dbo:Building ;
+		rdfs:range 	 dbo:Building;
+		rdfs:label  "délimité par"@fr ,
+					"surrounded by"@en .
+
+p:hasForm	 a		owl:ObjectProperty ;
+		rdfs:domain  dbo:Building ;
+		rdfs:range 	xsd:string ;
+		rdfs:label  "de forme"@fr ,
+					  "with a X form"@en .
+
+p:inNeighbourhood	a 		owl:ObjectProperty ;
+		rdfs:domain  dbo:Place ;
+		rdfs:range 	xsd:string ;
+		rdfs:label  "dans le quartier de"@fr ,
+					"in the neighbourhood of"@en .
+
+p:inCountry a	owl:ObjectProperty ;
+		rdfs:domain    dbo:Place ;
+		rdfs:range     dbo:Place ;
+		rdfs:label  "se trouvant au"@fr ,
+					"in"@en .
+		
+#################################################################
+#    Objects classes
+#################################################################
+	
+c:archeologicalPlace a owl:Class;
+		rdfs:label "Un patrimoine archéologique est constitué de sites archéologiques, laissés sur place par des humains, après l'occupation d'un lieu."@fr ,
+					 "An archeological patrimonial is constituated of archeological sites, left as-is by humans, after the occupationof a place."@en.
+	
+c:Religion a owl:Class ;
+		rdfs:label "Religion may be defined as a cultural system of designated behaviors and practices, worldviews, texts, sanctified places, prophecies, ethics, or organizations, that relates humanity to supernatural, transcendental, or spiritual elements. However, there is no scholarly consensus over what precisely constitutes a religion."@fr ,
+				   "Une religion se conçoit le plus souvent comme un système de pratiques et de croyances en usage dans un groupe ou une communauté, mais il n'y a pas de définition qui soit reconnue comme valable pour tout ce qu'il est permis aujourd'hui d'appeler religion."@en.
+		
+c:Construction a owl:Class;
+		rdfs:label "La construction d'un bâtiment"@fr ,
+				   "The construction of a building"@en.
+				   

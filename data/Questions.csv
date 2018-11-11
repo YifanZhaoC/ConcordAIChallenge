@@ -1,0 +1,25 @@
+<START>,
+"Do you know the Basilica Notre Dame de Quebec?","Yes, Basilique-cathedrale de notre dame de Quebec is a Cathedral located in Quebec, do you want to know more about it?"
+"Sure!","What do you want to know?"
+"What is its architectural structure?","its architectural structure has a construction starting in 1947 and finishing in 1950 and is composed of a sacristy, a Chapel, a WestWork, a Nave, a Parvise, a bell tower and crypts."
+"When was the bell tower built?","its construction started in 1768 and finished in 1771, it was built by the architect 8851 and was victim of a fire in 1922"
+<END>,
+<START>,
+"Is basilica Notre Dame de Quebec a Cathedral?","Yes, do you want to know more about it?"
+"What's its religious order?","It is part of the religious order called Catholicism"
+"And what is it's status?","it is classified patrimonial building, is referred to as Historical place of Canada, is declared Situated in a patrimonial site and has become first cathedral of the immense diocese of Quebec in 1674."
+<END>,
+<START>,
+"What is the history of the Basilica Notre Dame de Quebec?","Basilique-cathedrale de notre dame de Quebec has a construction starting in 1947 and finishing in 1950. In 1697 was the allocation of funds for expansion by Louis XIV of France, after, in 7233 was the beginning of the construction of the facade by 7233. Do you want to know more?"
+"Sure!","in 1687 was the end of the construction of the facade by 7233 , after, in 1697 was the attachment of the westwork to the church by extending the nave by 7233. Do you want to know more?"
+"No thanks","Okay!"
+<END>,
+<START>,
+"Where is Basilica Notre Dame de Quebec located?","Basilique-cathedrale de notre dame de Quebec is located on rue Buade in Quebec Canada. Do you want to know more about it?"
+"Sure, tell me about its architectural structure!","its architectural structure has a construction starting in 1947 and finishing in 1950 and is composed of a sacristy, a Chapel, a WestWork, a Nave, a Parvise, a bell tower and crypts."
+<END>,
+<START>,
+"Is Basilica Notre Dame de Quebec near 103126?","Yes. Do you want to know more about it?"
+"No thanks,Okay!"
+<END>,
+<START>,
